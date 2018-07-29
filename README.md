@@ -1,4 +1,4 @@
-e-box
+eCommerce Box
 =====
 
-A Symfony project created on July 28, 2018, 4:12 pm.
+A Symfony project.
