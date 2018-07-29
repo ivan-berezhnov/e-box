@@ -13,7 +13,7 @@ class BoardsController extends Controller
   public function indexAction()
   {
     return $this->render('boards/index.html.twig', [
-      'page_title' => 'Boards | eCommerce Box',
+      'page_title' => 'Boards',
     ]);
   }
 }

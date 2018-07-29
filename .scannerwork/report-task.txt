@@ -1,0 +1,6 @@
+projectKey=ebox
+serverUrl=http://localhost:9000
+serverVersion=7.1.0.11001
+dashboardUrl=http://localhost:9000/dashboard/index/ebox
+ceTaskId=AWTmOS9ucBGmcwP0AIGi
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWTmOS9ucBGmcwP0AIGi

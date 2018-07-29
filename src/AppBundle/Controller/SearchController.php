@@ -13,7 +13,7 @@ class SearchController extends Controller
   public function indexAction()
   {
     return $this->render('search/index.html.twig', [
-      'page_title' => 'Product Search | eCommerce Box',
+      'page_title' => 'Product Search',
     ]);
   }
 }

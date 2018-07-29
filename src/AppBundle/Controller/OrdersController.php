@@ -13,7 +13,7 @@ class OrdersController extends Controller
   public function indexAction()
   {
     return $this->render('orders/index.html.twig', [
-      'page_title' => 'Orders | eCommerce Box',
+      'page_title' => 'Orders',
     ]);
   }
 }

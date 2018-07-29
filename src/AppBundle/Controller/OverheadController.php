@@ -13,7 +13,7 @@ class OverheadController extends Controller
   public function indexAction()
   {
     return $this->render('overhead/index.html.twig', [
-      'page_title' => 'Overhead | eCommerce Box',
+      'page_title' => 'Overhead',
     ]);
   }
 }
