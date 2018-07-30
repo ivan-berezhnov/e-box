@@ -19,6 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'ssh sportb07:mVNhtbp@05@sportb07.ftp.tools'
                 echo 'Deploying....'
             }
         }
