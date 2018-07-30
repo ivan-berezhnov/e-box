@@ -1,7 +1,31 @@
-{% extends 'base.html.twig' %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-{% block title %} Error {% endblock %}
+    <title>{% block title %}Error{% endblock %}</title>
+
+    {% block stylesheets %}
+        <!-- Bootstrap CSS -->
+        <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    {% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+
+<body>
 
 {% block body %}
-    <h1>Error!!!</h1>
+    <div class="jumbotron">
+        <h1 class="display-4">Oppps! Error</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, quaerat!.</p>
+    </div>
 {% endblock %}
+
+</body>
+
+</html>
