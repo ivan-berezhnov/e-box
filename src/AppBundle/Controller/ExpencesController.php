@@ -5,15 +5,15 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
-class OverheadController extends Controller
+class ExpencesController extends Controller
 {
   /**
-   * @Route("/overhead", name="overhead")
+   * @Route("/expences", name="expences")
    */
   public function indexAction()
   {
-    return $this->render('overhead/index.html.twig', [
-      'page_title' => 'Overhead',
+    return $this->render('expences/index.html.twig', [
+      'page_title' => 'Expences',
     ]);
   }
 }
