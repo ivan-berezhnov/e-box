@@ -8,7 +8,7 @@ class AppKernel extends Kernel
 {
     public function __construct($environment, $debug)
     {
-      date_default_timezone_set('Europe/London');
+      date_default_timezone_set('Europe/Kiev');
       parent::__construct($environment, $debug);
     }
 
@@ -23,6 +23,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+
             new AppBundle\AppBundle(),
         ];
 
