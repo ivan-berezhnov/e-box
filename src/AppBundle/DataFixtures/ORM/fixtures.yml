@@ -1,0 +1,26 @@
+AppBundle\Entity\ProductCategories:
+  product_categories_{1..10}:
+    name: <ProductCategory()>
+
+AppBundle\Entity\Customers:
+  customers_{1..300}:
+    customerName: <firstName()> <lastName()>
+    customerAdress: <address()>
+    customerPhone: <phoneNumber()>
+    customerEmail: <email()>
+
+AppBundle\Entity\Orders:
+  orders_{1..500}:
+    productName: <name()>
+    productBuy: <randomFloat('10000','16000','2')>
+    productSale: <randomFloat('25000','30000','2')>
+    dateCreated: <dateTimeBetween('-6 months', 'now')>
+    dateDelivery: <dateTimeBetween($dateCreated, "now")>
+    productCategory: '@product_categories_*'
+    customers: '@customers_*'
+
+AppBundle\Entity\Expences:
+  expences_{1..500}:
+    type: <boolean(35)>
+    name: <name()>
+    amount: <randomFloat('200','6000','2')>
