@@ -33,21 +33,6 @@ class Orders
   private $productSale;
 
   /**
-   * @ORM\Column(type="string")
-   */
-  private $customerName;
-
-  /**
-   * @ORM\Column(type="string")
-   */
-  private $customerAdress;
-
-  /**
-   * @ORM\Column(type="string")
-   */
-  private $customerPhone;
-
-  /**
    * @ORM\Column(type="datetime")
    */
   private $dateCreated;
@@ -112,7 +97,7 @@ class Orders
   /**
    * @param mixed $productName
    */
-  public function setProductName(ProductCategories $productName)
+  public function setProductName($productName)
   {
     $this->productName = $productName;
   }
@@ -232,7 +217,7 @@ class Orders
   /**
    * @param mixed $productCategory
    */
-  public function setProductCategory($productCategory)
+  public function setProductCategory(ProductCategories $productCategory)
   {
     $this->productCategory = $productCategory;
   }
