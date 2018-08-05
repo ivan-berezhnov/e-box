@@ -19,7 +19,7 @@ AppBundle\Entity\Orders:
     productCategory: '@product_categories_*'
     customers: '@customers_*'
 
-AppBundle\Entity\Expences:
+AppBundle\Entity\Expenses:
   expences_{1..500}:
     type: <boolean(35)>
     name: <name()>

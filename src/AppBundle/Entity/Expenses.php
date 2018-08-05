@@ -6,10 +6,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ExpencesRepository")
- * @ORM\Table(name="expences")
+ * @ORM\Entity(repositoryClass="ExpensesRepository")
+ * @ORM\Table(name="expenses")
  */
-class Expences
+class Expenses
 {
   /**
    * @ORM\Id

@@ -26,16 +26,27 @@
 
         <ul class="nav d-flex justify-content-between">
             <li class="nav-item">
-                <a class="nav-link text-dark active" href="/boards">Boards</a>
+                <a class="nav-link text-dark active" href="{{ path('boards') }}">Boards</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" href="/orders">Orders</a>
+                <a class="nav-link text-dark" href="{{ path('orders') }}">Orders</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" href="/search">Product Search</a>
+                <a class="nav-link text-dark" href="{{ path('search') }}">Product Search</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" href="/expences">Expences</a>
+                <a class="nav-link text-dark" href="{{ path('expenses') }}">Expenses</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle nav-link text-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{{ path('add_order') }}">Add Order</a>
+                    <a class="dropdown-item" href="{{ path('add_expense') }}">Add Expense</a>
+                    <a class="dropdown-item" href="{{ path('add_product') }}">Add Product</a>
+                    <a class="dropdown-item" href="{{ path('add_category') }}">Add Category</a>
+                </div>
             </li>
         </ul>
     </div>
