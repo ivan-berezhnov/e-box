@@ -2,10 +2,10 @@
 
 namespace AppBundle\Repository;
 
-use AppBundle\Entity\Expences;
+use AppBundle\Entity\Expenses;
 use Doctrine\ORM\EntityRepository;
 
-class ExpencesRepository extends EntityRepository
+class ExpensesRepository extends EntityRepository
 {
 
 }
