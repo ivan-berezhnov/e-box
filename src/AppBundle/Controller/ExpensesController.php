@@ -12,8 +12,13 @@ class ExpensesController extends Controller
      */
     public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $expenses = $em->getRepository('AppBundle:Expenses')
+            ->findAll();
+
         return $this->render('expenses/index.html.twig', [
             'page_title' => 'Expenses',
+            'expenses' => $expenses,
         ]);
     }
 

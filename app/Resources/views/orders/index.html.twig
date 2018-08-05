@@ -21,7 +21,7 @@
                     </thead>
                     <tbody>
                 {% for order in orders %}
-                    {% set profit = order.productSale - order.productBuy %}
+                    {% set profit = (order.productSale)/100*30 %}
                     <tr>
                         <th scope="row">{{ order.id }}</th>
                         <td>{{ order.dateCreated|date('Y-m-d') }}</td>
