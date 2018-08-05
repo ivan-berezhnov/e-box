@@ -11,70 +11,62 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ProductCategories
 {
-  /**
-   * @ORM\Id
-   * @ORM\GeneratedValue(strategy="AUTO")
-   * @ORM\Column(type="integer")
-   */
-  private $id;
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     */
+    private $id;
 
-  /**
-   * @ORM\Column(type="string")
-   */
-  private $name;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $name;
 
-  /**
-   * @ORM\OneToMany(targetEntity="AppBundle\Entity\Orders", mappedBy="productCategory")
-   * @ORM\OrderBy({"createdAt"="DESC"})
-   */
-  private $orders;
+    /**
+     * @ORM\OneToMany(targetEntity="Orders", mappedBy="productCategory")
+     * @ORM\OrderBy({"dateCreated"="DESC"})
+     */
+    private $orders;
 
-  /**
-   * ProductCategories constructor.
-   */
-  public function __construct()
-  {
-    $this->orders = new ArrayCollection();
-  }
+    /**
+     * ProductCategories constructor.
+     */
+    public function __construct()
+    {
+        $this->orders = new ArrayCollection();
+    }
 
-  /**
-   * @return mixed
-   */
-  public function getId()
-  {
-    return $this->id;
-  }
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
-  /**
-   * @return mixed
-   */
-  public function getName()
-  {
-    return $this->name;
-  }
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
-  /**
-   * @param mixed $name
-   */
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 
-  /**
-   * @return mixed
-   */
-  public function getOrders()
-  {
-    return $this->orders;
-  }
-
-  /**
-   * @param mixed $orders
-   */
-  public function setOrders($orders)
-  {
-    $this->orders = $orders;
-  }
+    /**
+     * @return ArrayCollection|Orders[]
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
 
 }
