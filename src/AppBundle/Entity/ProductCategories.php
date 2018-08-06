@@ -23,19 +23,6 @@ class ProductCategories
    */
   private $name;
 
-  /**
-   * @ORM\OneToMany(targetEntity="AppBundle\Entity\Orders", mappedBy="productCategory")
-   * @ORM\OrderBy({"createdAt"="DESC"})
-   */
-  private $orders;
-
-  /**
-   * ProductCategories constructor.
-   */
-  public function __construct()
-  {
-    $this->orders = new ArrayCollection();
-  }
 
   /**
    * @return mixed
