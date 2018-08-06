@@ -14,12 +14,16 @@ let browserSync  = require('browser-sync').create();
 gulp.task('vendors', function() {
   return gulp.src([
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    './node_modules/datatables/media/js/jquery.dataTables.js',
   ])
     .pipe(gulp.dest('../js'));
 });
 
 gulp.task('sass', function() {
-  return gulp.src('./scss/**/*.scss')
+  return gulp.src([
+    './scss/**/*.scss',
+    './node_modules/datatables/media/css/jquery.dataTables.css'
+  ])
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'

@@ -43,13 +43,13 @@ class Orders
   private $dateDelivery;
 
   /**
-   * @ORM\ManyToOne(targetEntity="AppBundle\Entity\ProductCategories", inversedBy="orders")
+   * @ORM\ManyToOne(targetEntity="ProductCategories", inversedBy="orders")
    * @ORM\JoinColumn(nullable=false)
    */
   private $productCategory;
 
   /**
-   * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Customers", inversedBy="orders")
+   * @ORM\ManyToOne(targetEntity="Customers", inversedBy="orders")
    * @ORM\JoinColumn(nullable=false)
    */
   private $customers;

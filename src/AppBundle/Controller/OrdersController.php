@@ -15,8 +15,13 @@ class OrdersController extends Controller
      */
     public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $orders = $em->getRepository('AppBundle:Orders')
+            ->findAll();
+
         return $this->render('orders/index.html.twig', [
             'page_title' => 'Orders',
+            'orders' => $orders,
         ]);
     }
 

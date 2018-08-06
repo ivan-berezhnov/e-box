@@ -11,57 +11,65 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ProductCategories
 {
-  /**
-   * @ORM\Id
-   * @ORM\GeneratedValue(strategy="AUTO")
-   * @ORM\Column(type="integer")
-   */
-  private $id;
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     */
+    private $id;
 
-  /**
-   * @ORM\Column(type="string")
-   */
-  private $name;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $name;
 
+<<<<<<< HEAD
+=======
+    /**
+     * @ORM\OneToMany(targetEntity="Orders", mappedBy="productCategory")
+     * @ORM\OrderBy({"dateCreated"="DESC"})
+     */
+    private $orders;
 
-  /**
-   * @return mixed
-   */
-  public function getId()
-  {
-    return $this->id;
-  }
+    /**
+     * ProductCategories constructor.
+     */
+    public function __construct()
+    {
+        $this->orders = new ArrayCollection();
+    }
+>>>>>>> 67ce0dc0f8d642fccd9cc2822eb1436cd967fcdc
 
-  /**
-   * @return mixed
-   */
-  public function getName()
-  {
-    return $this->name;
-  }
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
-  /**
-   * @param mixed $name
-   */
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
-  /**
-   * @return mixed
-   */
-  public function getOrders()
-  {
-    return $this->orders;
-  }
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 
-  /**
-   * @param mixed $orders
-   */
-  public function setOrders($orders)
-  {
-    $this->orders = $orders;
-  }
+    /**
+     * @return ArrayCollection|Orders[]
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
 
 }
