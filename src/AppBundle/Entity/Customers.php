@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,92 +20,84 @@ class Customers {
     /**
      * @ORM\Column(type="string")
      */
-    private $customerName;
+    private $name;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $customerAdress;
+    private $adress;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $customerPhone;
+    private $phone;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $customerEmail;
+    private $email;
 
     /**
      * @return mixed
      */
-    public function getCustomerName()
-    {
-        return $this->customerName;
-    }
-
-    /**
-     * @param mixed $customerName
-     */
-    public function setCustomerName($customerName)
-    {
-        $this->customerName = $customerName;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCustomerAdress()
-    {
-        return $this->customerAdress;
-    }
-
-    /**
-     * @param mixed $customerAdress
-     */
-    public function setCustomerAdress($customerAdress)
-    {
-        $this->customerAdress = $customerAdress;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCustomerPhone()
-    {
-        return $this->customerPhone;
-    }
-
-    /**
-     * @param mixed $customerPhone
-     */
-    public function setCustomerPhone($customerPhone)
-    {
-        $this->customerPhone = $customerPhone;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCustomerEmail()
-    {
-        return $this->customerEmail;
-    }
-
-    /**
-     * @param mixed $customerEmail
-     */
-    public function setCustomerEmail($customerEmail)
-    {
-        $this->customerEmail = $customerEmail;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdress() {
+        return $this->adress;
+    }
+
+    /**
+     * @param mixed $adress
+     */
+    public function setAdress($adress) {
+        $this->adress = $adress;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone() {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone) {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail() {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
 }

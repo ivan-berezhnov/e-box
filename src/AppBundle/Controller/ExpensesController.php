@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Expenses;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Form\ExpenseFormType;
@@ -26,7 +27,7 @@ class ExpensesController extends Controller
     }
 
     /**
-     * @Route("/expense/add", name="add_expense")
+     * @Route("/expense/add", name="expense_add")
      */
     public function addAction(Request $request)
     {
@@ -35,12 +36,45 @@ class ExpensesController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $expense = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($expense);
+            $em->flush();
 
+            $this->addFlash('success', 'Expense created!');
+
+            return $this->redirectToRoute('expenses');
         }
 
         return $this->render('expenses/add.html.twig', [
-            'page_title' => 'Add new Expense',
+            'page_title' => 'Add Expense',
             'expenseForm' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/expense/{id}/edit", name="expense_edit")
+     */
+    public function editAction(Request $request, Expenses $expense)
+    {
+        $form = $this->createForm(ExpenseFormType::class, $expense);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $expense = $form->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($expense);
+            $em->flush();
+
+            $this->addFlash('success', 'Expense updated!');
+
+            return $this->redirectToRoute('expenses');
+        }
+
+        return $this->render('expenses/edit.html.twig', [
+            'page_title' => 'Edit Expense',
+            'expenseForm' => $form->createView()
         ]);
     }
 }

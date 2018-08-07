@@ -39,15 +39,29 @@
                     Add
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="{{ path('add_order') }}">Add Order</a>
-                    <a class="dropdown-item" href="{{ path('add_expense') }}">Add Expense</a>
+                    <a class="dropdown-item" href="{{ path('order_add') }}">Add Order</a>
+                    <a class="dropdown-item" href="{{ path('expense_add') }}">Add Expense</a>
                 </div>
             </li>
         </ul>
     </div>
 </nav>
 
-{% block body %}{% endblock %}
+{% for msg in app.session.flashBag.get('success') %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-success">
+                    {{ msg }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% block body %}
+
+{% endblock %}
 
 {% block footer %}
 <div class="border-top p-3 mt-5 bg-white">
@@ -64,6 +78,7 @@
 {% block footer_js %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('js/init.min.js') }}"></script>

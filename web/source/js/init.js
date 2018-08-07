@@ -5,4 +5,14 @@ $(document).ready(function () {
       'copy', 'excel', 'pdf'
     ]
   });
+
+  $('.js-datepicker').datepicker({
+    uiLibrary: 'bootstrap4',
+    format: 'yyyy-mm-dd'
+  });
+
+  $('.js-datepicker2').datepicker({
+    uiLibrary: 'bootstrap4',
+    format: 'yyyy-mm-dd'
+  });
 });

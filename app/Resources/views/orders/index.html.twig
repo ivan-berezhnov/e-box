@@ -28,7 +28,7 @@
                         <td>{{ order.productName }}</td>
                         <td>{{ profit|number_format(2, ',', '') }}</td>
                         <td>
-                            <a href="#" class="edit">Edit</a>
+                            <a href="{{ path('order_edit', {'id': order.id}) }}" class="btn btn-sm btn-success">Edit</a>
                         </td>
                     </tr>
                 {% endfor %}

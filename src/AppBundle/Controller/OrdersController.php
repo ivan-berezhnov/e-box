@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Orders;
 use AppBundle\Form\OrderFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,19 +27,53 @@ class OrdersController extends Controller
     }
 
     /**
-     * @Route("/order/add", name="add_order")
+     * @Route("/order/add", name="order_add")
      */
-    public function addAction(Request $request) {
+    public function addAction(Request $request)
+    {
         $form = $this->createForm(OrderFormType::class);
 
-        //        $form->handleRequest($request);
-        //        if ($form->isSubmitted() && $form->isValid()) {
-        //
-        //        }
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $order = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($order);
+            $em->flush();
+
+            $this->addFlash('success', 'Order created!');
+
+            return $this->redirectToRoute('orders');
+        }
 
         return $this->render('orders/add.html.twig', [
-            'page_title' => 'Add new order',
+            'page_title' => 'Add Order',
             'orderForm' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/order/{id}/edit", name="order_edit")
+     */
+    public function editAction(Request $request, Orders $order)
+    {
+        $form = $this->createForm(OrderFormType::class, $order);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $order = $form->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($order);
+            $em->flush();
+
+            $this->addFlash('success', 'Order updated!');
+
+            return $this->redirectToRoute('orders');
+        }
+
+        return $this->render('orders/edit.html.twig', [
+            'page_title' => 'Edit Order',
+            'orderForm' => $form->createView()
         ]);
     }
 }

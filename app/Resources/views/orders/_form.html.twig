@@ -1,0 +1,31 @@
+{{ form_start(orderForm) }}
+<div class="row">
+    <div class="col-md-6">
+        {{ form_row(orderForm.productName) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(orderForm.dateCreated) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(orderForm.dateDelivery) }}
+    </div>
+
+    <div class="col-md-6">
+        {{ form_row(orderForm.productBuy) }}
+    </div>
+    <div class="col-md-6">
+        {{ form_row(orderForm.productSale) }}
+    </div>
+
+    <div class="col-md-4">
+        {{ form_row(orderForm.customerName) }}
+    </div>
+    <div class="col-md-4">
+        {{ form_row(orderForm.customerAdress) }}
+    </div>
+    <div class="col-md-4">
+        {{ form_row(orderForm.customerPhone) }}
+    </div>
+</div>
+<button type="submit" class="btn btn-primary">Save</button>
+{{ form_end(orderForm) }}

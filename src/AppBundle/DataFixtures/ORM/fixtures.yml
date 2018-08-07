@@ -4,10 +4,10 @@ AppBundle\Entity\ProductCategories:
 
 AppBundle\Entity\Customers:
   customers_{1..300}:
-    customerName: <firstName()> <lastName()>
-    customerAdress: <address()>
-    customerPhone: <phoneNumber()>
-    customerEmail: <email()>
+    name: <firstName()> <lastName()>
+    adress: <address()>
+    phone: <phoneNumber()>
+    email: <email()>
 
 AppBundle\Entity\Orders:
   orders_{1..500}:
