@@ -24,5 +24,4 @@ class CustomerFormType extends  AbstractType
             'data_class' => Customers::class
         ]);
     }
-
 }

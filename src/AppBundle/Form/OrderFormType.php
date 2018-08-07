@@ -3,9 +3,6 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Customers;
-use AppBundle\Entity\Orders;
-use AppBundle\Entity\ProductCategories;
-use AppBundle\Repository\OrdersRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -24,14 +21,10 @@ class OrderFormType extends AbstractType
             ->add('productSale')
             ->add('dateCreated')
             ->add('dateDelivery')
-            ->add('productCategory',CollectionType::class, array(
-                'entry_type' => ProductCategoryFormType::class,
-                'entry_options' => array('label' => false),
-            ))
-            ->add('customers', CollectionType::class, array(
-                'entry_type' => CustomerFormType::class,
-                'entry_options' => array('label' => false),
-            ));
+            ->add('customerName')
+            ->add('customerAdress')
+            ->add('customerPhone')
+            ->add('customerEmail');
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -1,6 +1,6 @@
 AppBundle\Entity\ProductCategories:
   product_categories_{1..10}:
-    name: <ProductCategory()>
+    name: <productCategory()>
 
 AppBundle\Entity\Customers:
   customers_{1..300}:
@@ -11,16 +11,17 @@ AppBundle\Entity\Customers:
 
 AppBundle\Entity\Orders:
   orders_{1..500}:
-    productName: <name()>
+    productName: <productList()>
     productBuy: <randomFloat('10000','16000','2')>
     productSale: <randomFloat('17000','23000','2')>
     dateCreated: <dateTimeBetween('-6 months', 'now')>
     dateDelivery: <dateTimeBetween($dateCreated, "now")>
-    productCategory: '@product_categories_*'
-    customers: '@customers_*'
+    customerName: <firstName()> <lastName()>
+    customerAdress: <address()>
+    customerPhone: <phoneNumber()>
 
 AppBundle\Entity\Expenses:
-  expences_{1..500}:
+  expences_{1..1000}:
     type: <boolean(35)>
     name: <name()>
     date: <dateTimeBetween('-2 months', 'now')>

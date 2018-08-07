@@ -7,13 +7,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BoardsController extends Controller
 {
-  /**
-   * @Route("/boards", name="boards")
-   */
-  public function indexAction()
-  {
-    return $this->render('boards/index.html.twig', [
-      'page_title' => 'Boards',
-    ]);
-  }
+
+    /**
+     * @Route("/boards", name="boards")
+     */
+    public function indexAction()
+    {
+        return $this->render('boards/index.html.twig', [
+            'page_title' => 'Boards',
+        ]);
+    }
 }

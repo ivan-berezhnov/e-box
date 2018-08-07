@@ -9,8 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CustomersRepository")
  * @ORM\Table(name="customers")
  */
-class Customers
-{
+class Customers {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -39,63 +39,11 @@ class Customers
     private $customerEmail;
 
     /**
-     * @ORM\OneToMany(targetEntity="Orders", mappedBy="customers")
-     * @ORM\OrderBy({"dateCreated"="DESC"})
-     */
-    private $orders;
-
-
-    public function __construct()
-    {
-        $this->orders = new ArrayCollection();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
      * @return mixed
      */
     public function getCustomerName()
     {
         return $this->customerName;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCustomerAdress()
-    {
-        return $this->customerAdress;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCustomerPhone()
-    {
-        return $this->customerPhone;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCustomerEmail()
-    {
-        return $this->customerEmail;
-    }
-
-    /**
-     * @return ArrayCollection|Orders[]
-     */
-    public function getOrders()
-    {
-        return $this->orders;
     }
 
     /**
@@ -107,11 +55,27 @@ class Customers
     }
 
     /**
+     * @return mixed
+     */
+    public function getCustomerAdress()
+    {
+        return $this->customerAdress;
+    }
+
+    /**
      * @param mixed $customerAdress
      */
     public function setCustomerAdress($customerAdress)
     {
         $this->customerAdress = $customerAdress;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCustomerPhone()
+    {
+        return $this->customerPhone;
     }
 
     /**
@@ -123,6 +87,14 @@ class Customers
     }
 
     /**
+     * @return mixed
+     */
+    public function getCustomerEmail()
+    {
+        return $this->customerEmail;
+    }
+
+    /**
      * @param mixed $customerEmail
      */
     public function setCustomerEmail($customerEmail)
@@ -130,4 +102,11 @@ class Customers
         $this->customerEmail = $customerEmail;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

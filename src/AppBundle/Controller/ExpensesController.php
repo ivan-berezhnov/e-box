@@ -9,10 +9,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ExpensesController extends Controller
 {
+
     /**
      * @Route("/expenses", name="expenses")
      */
-    public function indexAction()
+    public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
         $expenses = $em->getRepository('AppBundle:Expenses')
@@ -42,5 +43,4 @@ class ExpensesController extends Controller
             'expenseForm' => $form->createView(),
         ]);
     }
-
 }
