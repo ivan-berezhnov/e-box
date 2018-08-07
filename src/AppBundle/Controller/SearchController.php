@@ -10,7 +10,7 @@ class SearchController extends Controller
   /**
    * @Route("/search", name="search")
    */
-  public function indexAction()
+  public function searchAction()
   {
     return $this->render('search/index.html.twig', [
       'page_title' => 'Product Search',

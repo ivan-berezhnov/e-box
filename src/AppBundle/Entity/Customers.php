@@ -39,18 +39,6 @@ class Customers
     private $customerEmail;
 
     /**
-     * @ORM\OneToMany(targetEntity="Orders", mappedBy="customers")
-     * @ORM\OrderBy({"dateCreated"="DESC"})
-     */
-    private $orders;
-
-
-    public function __construct()
-    {
-        $this->orders = new ArrayCollection();
-    }
-
-    /**
      * @return mixed
      */
     public function getId()
@@ -88,14 +76,6 @@ class Customers
     public function getCustomerEmail()
     {
         return $this->customerEmail;
-    }
-
-    /**
-     * @return ArrayCollection|Orders[]
-     */
-    public function getOrders()
-    {
-        return $this->orders;
     }
 
     /**

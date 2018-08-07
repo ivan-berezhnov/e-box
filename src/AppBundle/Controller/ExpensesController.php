@@ -12,7 +12,7 @@ class ExpensesController extends Controller
     /**
      * @Route("/expenses", name="expenses")
      */
-    public function indexAction()
+    public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
         $expenses = $em->getRepository('AppBundle:Expenses')
@@ -27,15 +27,15 @@ class ExpensesController extends Controller
     /**
      * @Route("/expense/add", name="add_expense")
      */
-    public function addAction(Request $request)
+    public function newAction(Request $request)
     {
 
         $form = $this->createForm(ExpenseFormType::class);
 
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-
-        }
+//        $form->handleRequest($request);
+//        if ($form->isSubmitted() && $form->isValid()) {
+//
+//        }
 
         return $this->render('expenses/add.html.twig', [
             'page_title' => 'Add new Expense',
